@@ -1,0 +1,212 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+% --- COLOR CONFIGURATION ---
+\definecolor{primarycolor}{RGB}{0, 51, 102}
+\definecolor{secondarycolor}{RGB}{85, 85, 85}
+\definecolor{lightgray}{RGB}{150, 150, 150}
+
+% --- HYPERLINK SETUP ---
+\hypersetup{
+	colorlinks=true,
+	linkcolor=primarycolor,
+	urlcolor=primarycolor,
+	pdfborder={0 0 0}
+}
+
+% --- LAYOUT & SPACING ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\pagestyle{empty}
+
+% --- HEADER STYLE ---
+\newcommand{\cvheader}[4]{
+	\begin{center}
+		{\LARGE\bfseries\color{primarycolor}#1}\\[8pt]
+		\color{secondarycolor}
+		#2 $\bullet$ #3 $\bullet$ #4\\[4pt]
+		\textcolor{lightgray}{\rule{0.8\textwidth}{1pt}}
+	\end{center}
+	\vspace{12pt}
+}
+
+% --- SECTION FORMATTING ---
+\titleformat{\section}
+{\large\bfseries\color{primarycolor}}
+{}{0em}{}
+[\vspace{-8pt}\textcolor{lightgray}{\rule{\linewidth}{0.8pt}}\vspace{4pt}]
+\titlespacing*{\section}{0pt}{16pt}{8pt}
+
+\titleformat{\subsection}
+{\normalsize\bfseries\color{primarycolor}}
+{}{0em}{}
+[\vspace{-6pt}\textcolor{lightgray}{\rule{\linewidth}{0.5pt}}\vspace{3pt}]
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+
+% --- EXPERIENCE ENTRY ---
+\newenvironment{cventry}[4]{
+	\noindent\begin{tabularx}{\linewidth}{@{}X@{\hspace{15pt}}r@{}}
+		\textbf{\color{primarycolor}#1} & \textbf{\color{secondarycolor}#4} \\
+		\textit{\color{secondarycolor}#2, #3} & \\
+	\end{tabularx}
+	\vspace{4pt}
+	\begin{itemize}[nosep,leftmargin=18pt,itemsep=3pt,topsep=0pt]
+	}{
+	\end{itemize}
+	\vspace{8pt}
+}
+
+% --- PROJECT ENTRY ---
+\newenvironment{cvproject}[3]{
+	\noindent\begin{tabularx}{\linewidth}{@{}X@{\hspace{15pt}}r@{}}
+		\textbf{\color{primarycolor}#1} & \textbf{\color{secondarycolor}#3} \\
+		\textit{\color{secondarycolor}#2} & \\
+	\end{tabularx}
+	\vspace{4pt}
+	\begin{itemize}[nosep,leftmargin=18pt,itemsep=3pt,topsep=0pt]
+	}{
+	\end{itemize}
+	\vspace{8pt}
+}
+
+% --- SKILL SECTION ---
+\newcommand{\skillgroup}[2]{
+	\noindent\textbf{\color{primarycolor}#1:} \color{secondarycolor}#2\par
+	\vspace{4pt}
+}
+
+% --- EDUCATION ENTRY ---
+\newcommand{\education}[4]{
+	\noindent\textbf{\color{primarycolor}#1}\\
+	\textit{#2}\\
+	#3 \hfill \textbf{#4}
+	\vspace{6pt}
+}
+
+\begin{document}
+	
+	% --- HEADER ---
+	\cvheader{JUSTIN TUYISENGE}
+	{kajomejustin@gmail.com}
+	{(+250) 788 695 870}
+	{linkedin.com/in/justin-tuyisenge}
+	
+	\noindent\textbf{Address:} KK 32 Ave, Kigali, Rwanda
+	
+	\vspace{12pt}
+	
+	% --- PROFESSIONAL SUMMARY ---
+	\section*{Professional Summary}
+	Dynamic IT leader with 8+ years of experience in data science, big data analytics, Data Engineering, and systems integration within the electricity utility sector. Currently pursuing an MSc in Big Data Analytics, I excel at transforming complex data into strategic insights, driving operational efficiency, and enabling data-driven decisions. Proven track record of leading cross-functional teams to deliver high-impact technical projects, leveraging advanced analytics, cloud technologies, and AI to optimize grid performance and business outcomes.
+	
+	% --- CORE COMPETENCIES ---
+	\section*{Core Competencies}
+	\begin{multicols}{2}
+		\begin{itemize}[leftmargin=*,itemsep=2pt]
+			\item Big Data Analytics \& Machine Learning
+			\item Data Engineering \& Real-Time Pipelines
+			\item Business Intelligence \& Dashboards
+			\item Team Leadership \& Mentoring
+			\item Strategic Planning \& Execution
+			\item Cross-functional Collaboration
+			\item Technical Communication
+			\item Process Optimization
+		\end{itemize}
+	\end{multicols}
+	
+	% --- PROFESSIONAL EXPERIENCE ---
+	\section*{Professional Experience}
+	
+	\begin{cventry}{IT Operations Applications Lead}{REG-EUCL}{Kigali, Rwanda}{Apr 2022 -- Present}
+		\item Architected seamless integrations for utility applications with third-party systems using APIs and microservices, improving system interoperability
+		\item Built AI-driven BI dashboards (Grafana, Power BI, Tableau) and presented complex technical insights to C-level executives through compelling data storytelling
+	\end{cventry}
+	
+	\begin{cventry}{MIS Specialist}{REG-EUCL}{Kigali, Rwanda}{May 2018 -- Jun 2022}
+		\item Pioneered automation initiatives across business processes through root cause analysis and process optimization, streamlining operations to increase efficiency.
+		\item Designed and implemented robust data governance frameworks using systematic problem-solving approaches, ensuring high accuracy in business-critical data
+	\end{cventry}
+	
+	\begin{cventry}{IT Business Analyst}{REG-EUCL}{Kigali, Rwanda}{Aug 2015 -- May 2018}
+		\item Translated complex business requirements into detailed technical specifications through effective stakeholder communication, enabling on-time IT project execution
+		\item Developed comprehensive data-driven business cases through analytical thinking and clear documentation, effectively aligning IT projects with strategic utility goals
+	\end{cventry}
+	
+	% --- KEY PROJECTS ---
+	\section*{Key Projects}
+	
+	\begin{cvproject}{AI-Driven Load Forecasting Model}{Personal/Academic Project}{2024}
+		\item Developed advanced ML model using Support Vector Regression, Linear Regression and Ridge to predict electricity demand with 92\% accuracy
+		\item Applied statistical analysis and model validation techniques to ensure robust performance across different demand patterns
+	\end{cvproject}
+	
+	\begin{cvproject}{Advanced Metering Infrastructure (AMI) System Upgrade}{REG-EUCL Project}{2023}
+		\item Led data integrity initiatives for national AMI upgrade, integrating Head End System (HES) and Meter Data Management (MDM) through cross-functional collaboration
+		\item Built robust data pipeline using kafka, zookeeper, redis and airflow reducing system latency through technical innovation
+	\end{cvproject}
+	
+	\begin{cvproject}{ERP Implementation (IFS Applications 9)}{REG-EUCL Project}{2022}
+		\item Spearheaded comprehensive data validation and integration processes through systematic project management and quality assurance
+		\item Created interactive BI dashboards that reduced manual reporting by 40 hours/month, boosting operational efficiency by 10\%
+	\end{cvproject}
+	
+	\begin{cvproject}{Electricity Vending System Implementation}{REG-EUCL Project}{2017 - 2022}
+		\item Directed seamless implementation of the prepaid vending system that serves 95\% of utility customers through strategic planning and execution
+		\item Led integration of prepaid vending systems with 12 third-party dealers via REST APIs through effective vendor management and technical communication
+	\end{cvproject}
+	
+	% --- EDUCATION ---
+	\section*{Education}
+	
+	\education{MSc, Big Data Analytics (In Progress)}{Adventist University of Central Africa}{Kigali, Rwanda}{2023 -- Present}\\
+	\textit{Relevant Coursework:} Machine Learning Algorithms, Statistical Data Analysis, Big Data Technologies (Hadoop, Spark), Data Mining, Advanced Database Systems, Cloud Computing.
+	
+	\education{BSc, Computer Science}{University of Rwanda}{Kigali, Rwanda}{2011 -- 2014}\\
+	\textit{Relevant Coursework:} Data Structures \& Algorithms, Database Systems, Software Engineering, Systems Analysis \& Design.
+	
+	% --- TECHNICAL SKILLS ---
+	\section*{Technical Skills}
+	
+	\skillgroup{Data Science \& ML}{Python, R, Machine Learning, Deep Learning, Statistical Analysis}
+	
+	\skillgroup{Data Engineering}{Kafka, Airflow, Spark, Hadoop, Elasticsearch, SQL, ETL/ELT Pipelines}
+	
+	\skillgroup{Databases}{MySQL, PostgreSQL, MongoDB, SQL Server, Apache HBase, Apache Cassandra}
+	
+	\skillgroup{BI \& Visualization}{Tableau, Power BI, Grafana, Advanced Dashboard Development using Python}
+	
+	% --- CERTIFICATIONS ---
+	\section*{Certifications}
+	\begin{itemize}[leftmargin=*,itemsep=2pt]
+		\item \textbf{IBM Data Science Professional Certificate}, Coursera (2024)
+		\item \textbf{Google Data Analytics Professional Certificate}, Coursera (In Progress - 2025)
+		\item \textbf{IBM Data Engineering Professional Certificate}, Coursera (In Progress - 2025)
+		\item \textbf{Business Systems Analysis Certificate}, University of Cape Town (2017)
+	\end{itemize}
+	
+	% --- LEADERSHIP \& ACHIEVEMENTS ---
+	\section*{Key Achievements}
+	\begin{itemize}[leftmargin=*,itemsep=2pt]
+		\item Successfully led digital transformation initiatives impacting 95\% of utility customers
+		\item Served as utility representative in international forums, participating in the development of the Eastern Africa Power Pool (EAPP) market trading platform	
+		\item Built data governance frameworks adopted as organizational standards
+	\end{itemize}
+	
+	% --- LANGUAGES ---
+	\section*{Languages}
+	Fluent in English, Kinyarwanda, and French
+	
+	\vspace{8pt}
+	\noindent\textit{References available upon request}
+	
+\end{document}
